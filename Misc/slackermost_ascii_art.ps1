@@ -232,15 +232,23 @@ $letter_underscore = @"
 
 $letter_height = 5
 
-$useremoji = "pepepanda"
-$useremoji = ":$($useremoji):"
-$backgroundemoji = ":reeeee:"
-
-function Spell {
+function Spell-Emoji {
+    [CmdletBinding()]
     Param(
       [Parameter(Mandatory=$true)]
-      [string]$Word
+      [string]$Word,
+
+      [Parameter(Mandatory=$false)]
+      [alias("FG")]
+      [string]$Foreground = "tim",
+
+      [Parameter(Mandatory=$false)]
+      [alias("BG")]
+      [string]$Background = "rip"
     )
+
+    $Foreground = ":$($Foreground):"
+    $Background = ":$($Background):"
 
     $out = ""
 
@@ -271,9 +279,5 @@ function Spell {
         $output += $_ + "-" + "`r`n"
     }
 
-    Write-Output ($output -replace "-",$backgroundemoji -replace '\+',$useremoji)
+    Write-Output ($output -replace "-",$Background -replace '\+',$Foreground)
 }
-
-
-
-Spell "VWXYZ" | Set-Clipboard
