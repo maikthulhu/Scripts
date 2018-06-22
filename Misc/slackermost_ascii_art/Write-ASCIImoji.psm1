@@ -232,11 +232,11 @@ $letter_underscore = @"
 
 $letter_height = 5
 
-function Spell-Emoji {
+function Write-ASCIImoji {
     [CmdletBinding()]
     Param(
       [Parameter(Mandatory=$true)]
-      [string]$Word,
+      [string]$Text,
 
       [Parameter(Mandatory=$false)]
       [alias("FG")]
@@ -254,7 +254,7 @@ function Spell-Emoji {
 
     For ($i=0; $i -lt $letter_height; $i++) {
         $line = ""
-        $Word.ToCharArray() | ForEach-Object {
+        $Text.ToCharArray() | ForEach-Object {
             If ($_ -eq " ") {
                 $let = "space"
             } ElseIf ($_ -eq "-") {
