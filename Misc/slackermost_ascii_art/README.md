@@ -1,6 +1,6 @@
-# Spell-Emoji
+# Write-ASCIImoji
 >![oh wow](oh_wow.gif)
-> - Owen Wilson, probably
+> -- Owen Wilson, probably
 
 ## Usage
 ```
