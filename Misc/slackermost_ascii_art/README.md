@@ -1,2 +1,2 @@
 # Spell-Emoji
-[oh wow]: oh_wow.gif
+![oh wow]: oh_wow.gif
